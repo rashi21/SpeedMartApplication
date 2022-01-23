@@ -54,12 +54,13 @@ li:not(:last-child) {
 }
 
 .responiveCSS {
-  font-size: 4.5em;
+    width: 35em;
 }
 
-@media only screen and (max-width: 1550px) {
+@media only screen and (min-width: 350px) and (max-width: 1500px)  {
     .responiveCSS {
         font-size: 4.5em !important;
+        width: 15em;
       }
 }
 
@@ -84,7 +85,7 @@ li:not(:last-child) {
 }
 
 .tableDisplay {
-  width: 50px;
+  width: 30px;
   color: black;
   font-size: 20px;
   text-align: left;
