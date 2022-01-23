@@ -59,7 +59,7 @@ li:not(:last-child) {
   width: 10vw;
   min-height: 45vw;
 }
-@media (min-width: 768px) {
+@media (min-width: 350px) {
   .container-main {
     float: right;
     position: fixed;
