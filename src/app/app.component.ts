@@ -14,6 +14,11 @@ export class AppComponent {
 
   demoData = DemoData;
 
+  displayDeliveryOption(): void {
+    this.textToBeDisplayed = '';
+    this.displayDeliveryScreen = true;
+  }
+
   itemSelected(task: string): void {
     this.optionIsClicked = true;
     this.displayDeliveryScreen = false;
