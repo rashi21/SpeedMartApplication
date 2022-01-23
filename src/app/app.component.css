@@ -145,3 +145,8 @@ img#bgImage {
 
     }
 }
+
+tr:nth-child(odd) {
+    background-color: white !important;
+    width: 5em;
+}
