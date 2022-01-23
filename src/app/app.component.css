@@ -1,0 +1,100 @@
+img#center-img {
+  display: block;
+  margin: auto;
+  height: 7.5rem;
+  width: 7.5rem;
+  object-fit: contain;
+  margin-top: 5%;
+  border: none;
+  padding-top: 10px;
+}
+
+.writing {
+  text-align: center;
+  font-style: italic;
+  font-size: 2em;
+  color: red;
+  font-weight: bold;
+}
+
+.ul {
+  color: white;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  list-style-type: none;
+  padding-top: 3em;
+  text-align: left;
+}
+
+.version {
+  color: white;
+  float: right;
+  padding-right: 20px;
+}
+
+li:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+.container-info {
+  display: inline-block;
+  position: relative;
+  width: 10vw;
+  min-height: 45vw;
+  background-color: darkgreen;
+}
+@media (min-width: 768px) {
+  .container-info {
+    float: left;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 15%;
+  }
+}
+
+.container-main {
+  display: inline-block;
+  position: relative;
+  width: 10vw;
+  min-height: 45vw;
+}
+@media (min-width: 768px) {
+  .container-main {
+    float: right;
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 85%;
+  }
+}
+
+.tableDisplay {
+  width: 50px;;
+  color: black;
+  font-size: 20px;
+  text-align: left;
+  margin-left: 2em !important;
+  margin-top: 1em;
+}
+.menu:hover {
+  cursor: pointer !important;
+}
+
+:host ::ng-deep .row-accessories {
+  background-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+img#bgImage {
+  transform: rotate(270deg);
+  /* All browsers support */
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  position: fixed;
+  margin-right: 0 !important;
+  margin-left: 75em;
+  height: 20em;
+}

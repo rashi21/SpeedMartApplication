@@ -1,4 +1,72 @@
-<span>{{ title }} app is running!</span>
+<div>
+  <div class="container-info">
+    <img src="assets/santa.png" id="center-img" />
+    <p class="writing">Santa Inc.</p>
+    <span class="version">V4.1.2</span>
 
-
-<router-outlet></router-outlet>
+    <ul class="writing ul">
+      <li *ngFor="let task of tasks" (click)="itemSelected(task)">
+        {{ task }}
+      </li>
+    </ul>
+  </div>
+  <div class="container-main">
+  <img src="assets/pine.png" id="bgImage"/>
+    <div
+      class="menu"
+      *ngIf="optionIsClicked && textToBeDisplayed"
+      style="
+        font-style: italic;
+        font-size: 2em;
+        text-align: center;
+        line-height: 50vw;
+      "
+    >
+      {{ textToBeDisplayed }}
+    </div>
+    <div
+      *ngIf="displayDeliveryScreen"
+      style="
+        width: 50vm;
+        font-size: 2.5em;
+        color: red;
+        font-style: italic;
+        margin-top: 4em;
+      "
+    >
+      <span style="margin-left: 3em; padding-bottom: 2em">Delivery List</span>
+      <p-table
+        [value]="demoData"
+        [paginator]="true"
+        [rows]="20"
+        selectionMode="single"
+        [showCurrentPageReport]="true"
+        responsiveLayout="scroll"
+        [rowsPerPageOptions]="[20, 30]"
+        class="tableDisplay"
+        styleClass="p-datatable-gridlines"
+      >
+        <ng-template pTemplate="header">
+          <tr style="display: table-row">
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Address</th>
+            <th>Wishes</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-item>
+          <tr
+            [ngClass]="{
+              'row-accessories': '(demoData.indexOf(item.firstName))%2'
+            }"
+          >
+            <td>{{ item.firstName }}</td>
+            <td>{{ item.lastName }}</td>
+            <td>{{ item.address }}</td>
+            <td>{{ item.wishes }}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>
