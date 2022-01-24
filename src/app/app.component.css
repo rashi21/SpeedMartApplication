@@ -1,8 +1,8 @@
 
 
-li:not(:last-child) {
+/* li:not(:last-child) {
   margin-bottom: 1em;
-}
+} */
 
 .container-info {
   display: inline-block;
@@ -206,7 +206,12 @@ img#center-img {
 
 .icon {
   font-size: 1em;
-  cursor: pointer;
+  cursor: pointer !important;
+}
+
+.icon:hover {
+  font-style: italic;
+  color: yellow;
 }
 
 .middle-class {

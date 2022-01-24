@@ -9,8 +9,8 @@
     </p>
 
     <ul style="text-align: left" class="data-class">
-      <li *ngFor="let task of tasks">
-        <i class="{{ task.class }} icon " (click)="itemSelected(task.name)">
+      <li *ngFor="let task of tasks" [style.margin-bottom] = "task.margin">
+        <i class="{{ task.class }} icon " (click)="itemSelected(task.name)" >
           <span style="margin-left: 10px">{{
             task.name
           }}</span>

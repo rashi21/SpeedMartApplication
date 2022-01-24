@@ -1,10 +1,4 @@
-import {
-  Component,
-  DoCheck,
-  HostListener,
-  OnChanges,
-  OnInit,
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as faker from 'faker';
 import { UserService } from './app.service';
 import { DemoData } from './demo-data';
@@ -16,10 +10,10 @@ import { DemoData } from './demo-data';
 })
 export class AppComponent implements OnInit {
   tasks = [
-    { name: 'Toys Factory', class: 'pi pi-palette' },
-    { name: 'Delivery', class: 'pi pi-download' },
-    { name: 'Legal', class: 'pi pi-briefcase' },
-    { name: 'Disconnect', class: 'pi pi-ban' },
+    { name: 'Toys Factory', class: 'pi pi-palette', margin: '10px' },
+    { name: 'Delivery', class: 'pi pi-download', margin: '3em' },
+    { name: 'Legal', class: 'pi pi-briefcase', margin: '3em' },
+    { name: 'Disconnect', class: 'pi pi-ban', margin: '0' },
   ];
   displayDeliveryScreen: boolean = false;
   textToBeDisplayed: string = '';
@@ -27,7 +21,6 @@ export class AppComponent implements OnInit {
 
   demoData: DemoData[] = [];
   faultyWishers: number[] = [];
-  screenWidth = screen.width;
 
   constructor(private service: UserService) {}
 
@@ -35,11 +28,6 @@ export class AppComponent implements OnInit {
     this.demoData = this.service.getWishData();
     this.faultyWishers = this.service.buggyRecords();
     console.log(this.faultyWishers);
-  }
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    this.screenWidth = event.target.innerWidth;
   }
 
   displayDeliveryOption(): void {
