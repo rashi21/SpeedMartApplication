@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {TableModule} from 'primeng/table';
 import {PaginatorModule} from 'primeng/paginator';
+import { UserService } from './app.service';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import {PaginatorModule} from 'primeng/paginator';
     TableModule,
     PaginatorModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,35 +1,4 @@
-img#center-img {
-  display: block;
-  margin: auto;
-  height: 7.5rem;
-  width: 7.5rem;
-  object-fit: contain;
-  margin-top: 5%;
-  border: none;
-  padding-top: 10px;
-}
 
-.writing {
-  text-align: center;
-  font-style: italic;
-  font-size: 2em;
-  color: red;
-  font-weight: bold;
-}
-
-.ul {
-  color: white;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  list-style-type: none;
-  padding-top: 3em;
-  text-align: left;
-}
-
-.version {
-  color: white;
-  float: right;
-  padding-right: 20px;
-}
 
 li:not(:last-child) {
   margin-bottom: 1em;
@@ -47,7 +16,7 @@ li:not(:last-child) {
   display: none;
 }
 
-@media only screen and (min-width: 350px) and (max-width: 1500px) {
+@media only screen and (max-width: 800px) {
   .displayOrNot {
     display: inline;
   }
@@ -61,63 +30,40 @@ li:not(:last-child) {
   }
 }
 .responiveCSS {
-  width: 35em;
-  font-size: 4em;
+  font-size: 3em;
   color: red;
   font-style: italic;
-  /* margin-top: 4em; */
-  margin-left: -6em;
-  margin-top: 9em;
+  /* margin-left: 2em; */
+  padding-left: 3em;
 }
 
-@media only screen and (min-width: 350px) and (max-width: 1500px) {
-  .notDisplay {
-    display: block !important;
-    font-size: 4em;
-    color: white;
-    font-weight: 900;
-    cursor: pointer !important;
-    border: 2px solid white;
-    width: 42px;
-    height: 49px;
-    margin-left: 26px;
-    margin-top: 67px;
-    text-align: center;
-    line-height: 0px;
-  }
+.heading {
+  margin-left: 3vw;
+  font-size: 2em !important;
+  /* padding-bottom: 2em; */
+  /* text-shadow: 10px; */
+}
 
+@media only screen and (min-width: 450px) and (max-width: 2000px) {
   .notDisplay:hover {
-      cursor: pointer;
+    cursor: pointer;
   }
 
   .ul {
     display: none;
   }
-  .version {
+  /* .version {
     margin-bottom: 0 !important;
     margin-top: -13vw;
     margin-right: 1em;
-  }
-  .menu {
-      display: none;
-  }
-  .writing {
-    float: right;
+  } */
+  /* .writing {
+    
     margin-right: 10px;
     font-size: 3.5em;
     margin-top: -3em;
-  }
-  img#center-img {
-    display: none;
-  }
-  img#bgImage {
-    display: none;
-  }
-  .responiveCSS {
-    font-size: 4.5em !important;
-    width: 15em;
-    height: fit-content;
-  }
+  } */
+ 
 }
 
 .container-main {
@@ -135,9 +81,6 @@ li:not(:last-child) {
     height: 100%;
     width: 70vw;
   }
-  .responiveCSS {
-    font-size: 1.5em !important;
-  }
 }
 
 .tableDisplay {
@@ -152,8 +95,8 @@ li:not(:last-child) {
   cursor: pointer !important;
 }
 
-:host ::ng-deep .row-accessories {
-  background-color: rgba(0, 0, 0, 0.15) !important;
+.changeRowColor {
+  background-color: pink !important;
 }
 
 img#bgImage {
@@ -170,7 +113,7 @@ img#bgImage {
   width: 43em;
 }
 
-@media only screen and (min-width: 350px) and (max-width: 1500px) {
+@media only screen and (max-width: 800px) {
   img#bgImage {
     transform: rotate(270deg);
     /* All browsers support */
@@ -186,11 +129,187 @@ img#bgImage {
   }
 }
 
-tr:nth-child(odd) {
-  background-color: white !important;
+/* tr:nth-child() {
   width: 5em;
+} */
+
+.doNotDisplay {
+  display: none;
 }
 
-.notDisplay {
-  display: none;
+/*NEW CSS */
+.parent-class {
+  box-sizing: border-box;
+  display: block;
+  height: 100vh;
+}
+
+.top-class {
+  /* height: 100vh;
+  width: 13vw;
+  text-align: center;
+  background-color: darkgreen;
+  display: inline-block;
+  position: relative; */
+  height: 100vh;
+  float: left;
+  width: 20%;
+  text-align: center;
+  background-color: darkgreen;
+}
+
+.right-class {
+  /* float: right !important;
+  position: relative;
+  width: 34vw !important; */
+  width: 30%;
+  float: right;
+}
+
+img#pine {
+  width: 80%;
+  float: right;
+}
+
+img#center-img {
+  height: 25%;
+  width: 45%;
+  margin-top: 10%;
+  margin-left: 5%;
+}
+
+.writing {
+  text-align: center;
+  font-style: italic;
+  font-size: 2em;
+  color: red;
+  font-weight: bold;
+  display: grid;
+}
+
+.version {
+  color: white;
+  float: right;
+  padding-right: 20px;
+  position: relative;
+  font-size: 15px !important;
+  text-align: right;
+}
+
+.data-class {
+  color: white;
+  list-style-type: none;
+  padding-top: 3em;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.icon {
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.middle-class {
+  /* height: 15vh;
+  width: 50vw !important;
+  display: inline-block;
+  position: relative;
+  width: 15em;
+  float: top; */
+  float: left;
+  width: 50%;
+  margin-top: 4em;
+}
+ 
+
+@media only screen and (max-width: 800px) {
+  .top-class {
+    height: 20vh;
+    width: 97vw;
+    background-color: darkgreen;
+  }
+
+  .doNotDisplay {
+    display: inline-grid !important;
+    font-size: 2em;
+    color: white;
+    float: left;
+    margin-left: 15px;
+    line-height: 4em;
+    cursor: pointer;
+  }
+
+  .writing {
+    float: right;
+    margin-right: 15px;
+  }
+
+  .data-class {
+    display: none;
+  }
+
+  .icon {
+    display: none;
+  }
+  img#pine {
+    display: none;
+  }
+  .right-class {
+    display: none;
+  }
+  .changeRowColor {
+    background-color: white !important;
+  }
+  .responiveCSS {
+    font-size: 1.5em !important;
+    font-weight: bold;
+  }
+  .middle-class {
+    margin-top: 0;
+    width: 100%;
+  }
+  .tableDisplay {
+    margin-top: 1.5em;
+    height: 29em;
+    overflow-y: auto;
+  }
+
+  img#center-img {
+    display: none;
+  }
+  img#bgImage {
+    display: none;
+  }
+
+  :host ::ng-deep .p-datatable .p-datatable-thead > tr > th {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+  }
+  :host
+    ::ng-deep
+    .p-datatable.p-datatable-gridlines
+    .p-datatable-tbody
+    > tr
+    > td {
+    text-overflow: ellipsis !important;
+  }
+
+  .tableContainer {
+    padding-left: 0em !important;
+  }
+}
+
+.tableContainer {
+  padding-left: 5em;
+}
+
+:host
+  ::ng-deep
+  div.p-datatable-gridlines.p-datatable.p-component
+  .p-datatable-hoverable-rows
+  .p-datatable-resizable
+  .p-datatable-resizable-fit
+  .p-datatable-scrollable {
+  overflow-y: auto !important;
 }

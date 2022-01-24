@@ -1,23 +1,26 @@
-<div>
-  <div class="container-info">
-      <div>
-    <p class="notDisplay" (click)="displayDeliveryOption()">_</p>
-</div>
-    
+<div class="parent-class">
+  <!-- 1st part -->
+  <div class="top-class">
+    <i class="pi pi-bars doNotDisplay" (click)="displayDeliveryOption()"></i>
     <img src="assets/santa.png" id="center-img" />
-    <p class="writing">Santa Inc.</p>
-    <span class="version">V4.1.2</span>
+    <p class="writing">
+      Santa Inc.
+      <span class="version">V4.1.2</span>
+    </p>
 
-    <ul class="writing ul">
-      <li *ngFor="let task of tasks" (click)="itemSelected(task)">
-        {{ task }}
+    <ul style="text-align: left" class="data-class">
+      <li *ngFor="let task of tasks">
+        <i class="{{ task.class }} icon " (click)="itemSelected(task.name)">
+          <span style="margin-left: 10px">{{
+            task.name
+          }}</span>
+        </i>
       </li>
     </ul>
   </div>
-  <div class="container-main">
-  <img src="assets/pine.png" id="bgImage"/>
+  <!-- 2nd part -->
+  <div class="middle-class">
     <div
-      class="menu"
       *ngIf="optionIsClicked && textToBeDisplayed"
       style="
         font-style: italic;
@@ -28,43 +31,50 @@
     >
       {{ textToBeDisplayed }}
     </div>
-    <div
-    class="responiveCSS"
-      *ngIf="displayDeliveryScreen"
-    >
-      <span style="margin-left: 3em; padding-bottom: 2em; text-shadow:10px;">Delivery List</span>
+    <h1 class="responiveCSS" *ngIf="displayDeliveryScreen">Delivery List</h1>
+    <div style="width: 100%;" class="tableContainer">
       <p-table
+        *ngIf="displayDeliveryScreen"
         [value]="demoData"
         [paginator]="true"
-        [rows]="20"
+        [rows]="10"
         selectionMode="single"
         [showCurrentPageReport]="true"
         responsiveLayout="scroll"
-        [rowsPerPageOptions]="[20, 30]"
+        [rowsPerPageOptions]="[10, 20]"
         class="tableDisplay"
+        scrollDirection="both" [scrollable]="true" scrollHeight="500px"
+        [style]="{
+          height: '72vh',
+          'overflow-y': 'auto !important'
+        }"
+        [resizableColumns]="true"
         styleClass="p-datatable-gridlines"
       >
         <ng-template pTemplate="header">
-          <tr style="display: table-row">
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Address</th>
-            <th>Wishes</th>
+          <tr style="border: 1px solid grey">
+            <th style="border: 1px solid grey" pFrozenColumn>First Name</th>
+            <th style="border: 1px solid grey">Last Name</th>
+            <th style="border: 1px solid grey">Address</th>
+            <th style="border: 1px solid grey" alignFrozen="right" pFrozenColumn>Wishes</th>
           </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-item>
+        <ng-template pTemplate="body" let-item let-rowIndex="rowIndex">
           <tr
-            [ngClass]="{
-              'row-accessories': '(demoData.indexOf(item.firstName))%2'
-            }"
+            [ngClass]="{ changeRowColor: faultyWishers.includes(rowIndex) }"
+            style="border: 1px solid grey"
           >
-            <td>{{ item.firstName }}</td>
-            <td>{{ item.lastName }}</td>
-            <td>{{ item.address }}</td>
-            <td>{{ item.wishes }}</td>
+            <td style="border: 1px solid grey">{{ item.firstName }}</td>
+            <td style="border: 1px solid grey">{{ item.lastName }}</td>
+            <td style="border: 1px solid grey">{{ item.address }}</td>
+            <td style="border: 1px solid grey">{{ item.wishes }}</td>
           </tr>
         </ng-template>
       </p-table>
     </div>
+  </div>
+  <!-- 3rd part -->
+  <div class="right-class">
+    <img src="assets/pine.png" id="pine" />
   </div>
 </div>
