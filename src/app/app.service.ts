@@ -1,9 +1,15 @@
+/*
+Service Class to fetch Wish List for Santa
+Author: Rashi Saxena
+*/ 
+
 import * as faker from 'faker';
 import { Injectable } from '@angular/core';
 import { DemoData } from './demo-data';
 
 @Injectable()
 export class UserService {
+  //method to fetch all the data of the wish list (fetching fake data for ease)
   getWishData(): DemoData[] {
     let wishData = [];
     for (let i = 0; i < 100; i++) {
@@ -18,6 +24,7 @@ export class UserService {
     return wishData;
   }
 
+  // method to fetch or identify poorly behaved children
   buggyRecords(): number[] {
     let bugUser = [];
     for (let i = 0; i < 20; i++) {

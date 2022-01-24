@@ -1,3 +1,9 @@
+
+/*
+Component Class to Design the Wish List Application
+Author: Rashi Saxena
+*/ 
+
 import { Component, OnInit } from '@angular/core';
 import * as faker from 'faker';
 import { UserService } from './app.service';
@@ -9,6 +15,7 @@ import { DemoData } from './demo-data';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
+
   tasks = [
     { name: 'Toys Factory', class: 'pi pi-palette', margin: '10px' },
     { name: 'Delivery', class: 'pi pi-download', margin: '3em' },
@@ -25,9 +32,10 @@ export class AppComponent implements OnInit {
   constructor(private service: UserService) {}
 
   ngOnInit(): void {
+    // fake data fetched from the service class
     this.demoData = this.service.getWishData();
+    // assumed poorly behaved wishers
     this.faultyWishers = this.service.buggyRecords();
-    console.log(this.faultyWishers);
   }
 
   displayDeliveryOption(): void {
