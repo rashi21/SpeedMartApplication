@@ -304,6 +304,13 @@ img#center-img {
 }
 
 :host
+    ::ng-deep
+    .p-datatable.p-datatable-gridlines
+    .p-datatable-tbody{
+      width: 100%;
+    }
+
+:host
   ::ng-deep
   div.p-datatable-gridlines.p-datatable.p-component
   .p-datatable-hoverable-rows

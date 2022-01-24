@@ -9,11 +9,9 @@
     </p>
 
     <ul style="text-align: left" class="data-class">
-      <li *ngFor="let task of tasks" [style.margin-bottom] = "task.margin">
-        <i class="{{ task.class }} icon " (click)="itemSelected(task.name)" >
-          <span style="margin-left: 10px">{{
-            task.name
-          }}</span>
+      <li *ngFor="let task of tasks" [style.margin-bottom]="task.margin">
+        <i class="{{ task.class }} icon " (click)="itemSelected(task.name)">
+          <span style="margin-left: 10px">{{ task.name }}</span>
         </i>
       </li>
     </ul>
@@ -32,7 +30,7 @@
       {{ textToBeDisplayed }}
     </div>
     <h1 class="responiveCSS" *ngIf="displayDeliveryScreen">Delivery List</h1>
-    <div style="width: 100%;" class="tableContainer">
+    <div style="width: 100%" class="tableContainer">
       <p-table
         *ngIf="displayDeliveryScreen"
         [value]="demoData"
@@ -43,7 +41,9 @@
         responsiveLayout="scroll"
         [rowsPerPageOptions]="[10, 20]"
         class="tableDisplay"
-        scrollDirection="both" [scrollable]="true" scrollHeight="500px"
+        scrollDirection="both"
+        [scrollable]="true"
+        scrollHeight="500px"
         [style]="{
           height: '72vh',
           'overflow-y': 'auto !important'
@@ -52,22 +52,19 @@
         styleClass="p-datatable-gridlines"
       >
         <ng-template pTemplate="header">
-          <tr style="border: 1px solid grey">
-            <th style="border: 1px solid grey" pFrozenColumn>First Name</th>
-            <th style="border: 1px solid grey">Last Name</th>
-            <th style="border: 1px solid grey">Address</th>
-            <th style="border: 1px solid grey" alignFrozen="right" pFrozenColumn>Wishes</th>
+          <tr>
+            <th pFrozenColumn>First Name</th>
+            <th>Last Name</th>
+            <th>Address</th>
+            <th alignFrozen="right" pFrozenColumn>Wishes</th>
           </tr>
         </ng-template>
         <ng-template pTemplate="body" let-item let-rowIndex="rowIndex">
-          <tr
-            [ngClass]="{ changeRowColor: faultyWishers.includes(rowIndex) }"
-            style="border: 1px solid grey"
-          >
-            <td style="border: 1px solid grey">{{ item.firstName }}</td>
-            <td style="border: 1px solid grey">{{ item.lastName }}</td>
-            <td style="border: 1px solid grey">{{ item.address }}</td>
-            <td style="border: 1px solid grey">{{ item.wishes }}</td>
+          <tr [ngClass]="{ changeRowColor: faultyWishers.includes(rowIndex) }">
+            <td>{{ item.firstName }}</td>
+            <td>{{ item.lastName }}</td>
+            <td>{{ item.address }}</td>
+            <td>{{ item.wishes }}</td>
           </tr>
         </ng-template>
       </p-table>
